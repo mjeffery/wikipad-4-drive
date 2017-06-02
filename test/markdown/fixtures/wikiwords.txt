@@ -1,0 +1,9 @@
+---
+desc: WikiWords
+---
+
+WikiWord
+.
+WikiWord
+.
+<p><a href="WikiWord" data-wikiword="WikiWord">WikiWord</a></p>

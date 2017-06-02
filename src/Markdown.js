@@ -7,7 +7,7 @@ export default class Markdown extends React.Component {
 		super(props)
 
 		this.renderer = createRenderer({
-			linkify: true,
+			linkify: false,
 			typographer: true
 		})
 	}
