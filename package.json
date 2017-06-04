@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -20,7 +21,10 @@
   "dependencies": {
     "babel-polyfill": "^6.23.0",
     "brace": "^0.10.0",
+    "history": "^4.6.1",
     "markdown-it": "^8.3.1",
+    "path-to-regexp": "^1.7.0",
+    "query-string": "^4.3.4",
     "react": "^15.5.4",
     "react-ace": "^4.2.3",
     "react-dom": "^15.5.4"
