@@ -1,5 +1,7 @@
 import Router from './Router'
 
+import drive from '../drive'
+
 export function createRouter() {
 
     const router = new Router()
@@ -15,8 +17,8 @@ export function createRouter() {
     function createDocument(context) {
         let { folderId, userId } = context.query
         console.log(`creating document folderId=${folderId} userId=${userId}`)
-        //
-        //dispatch({ type: 'CREATE_DOCUMENT', folderId, userId })
+
+        drive.createDocument({ folderId })
     }
 
     function loadDocument(context, next) {

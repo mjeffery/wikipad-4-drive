@@ -9,6 +9,4 @@ import PreviewEditor from './PreviewEditor'
 
 createRouter()
 
-window.handleClientLoad = x => x
-
 render(<PreviewEditor />, document.getElementById('container'))
