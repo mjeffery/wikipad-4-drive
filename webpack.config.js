@@ -42,7 +42,7 @@ module.exports = {
 		}]
 	},
 	plugins: [ new StringReplacePlugin() ],
-	devtool: 'cheap-eval-source-map',
+	devtool: 'cheap-module-source-map',
 	devServer: {
 		port: 8080,
 		contentBase: path.join(__dirname, 'public'),

@@ -3,12 +3,13 @@ import queryString from 'query-string'
 
 import Route from './Route'
 
+let nextDispatchId = 0
+
 export default class Router {
 
     constructor() {
         this._running = false
         this._callbacks = []
-        this._currentDispatchId = 0
     }
 
     on(path, ...callbacks) {
@@ -43,7 +44,7 @@ export default class Router {
     }
 
     dispatch(ctx) {
-        let dispatchId = this._currentDispatchId++
+        let dispatchId = this._currentDispatchId = nextDispatchId++
         let i = 0
         let next = () => {
             let callback = this._callbacks[i++] 
