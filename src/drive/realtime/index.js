@@ -1,5 +1,6 @@
 import customObjects from './custom'
 import modelInitializer from './modelInitializer'
+import { tryRefreshToken } from '../auth'
 
 export function createDocumentLoader(gapi) {
 
@@ -7,15 +8,18 @@ export function createDocumentLoader(gapi) {
         let initNewModel = modelInitializer.create(gapi)
 
         customObjects.register(gapi);
-        
-        return new Promise( (resolve, reject) => {
-            gapi.drive.realtime.load(
-                file.id,
-                realtimeDocument => resolve(realtimeDocument),
-                initNewModel,
-                error => reject(error) //TODO not a good idea...
-            )
-        })
+
+        const load = () => 
+            new Promise( (resolve, reject) => {
+                gapi.drive.realtime.load(
+                    file.id,
+                    realtimeDocument => resolve(realtimeDocument),
+                    initNewModel,
+                    error => tryRefreshToken(error).catch( reject )
+                )
+            })
+
+        return load()
     }
     
 }

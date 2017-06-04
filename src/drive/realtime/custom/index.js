@@ -8,5 +8,7 @@ function register(gapi) {
     WikiPage.register(gapi)
 }
 
+export { Highlight, EditorState, WikiPage }
+
 export default { Highlight, EditorState, WikiPage, register }
 
